@@ -1,11 +1,10 @@
 package hr.java.vjezbe.entitet;
 
-import java.math.BigDecimal;
 
-public class TvrdiDisk extends Komponenta {
+public class TvrdiDisk extends Komponenta  {
 
 	private String tip;
-	private BigDecimal kapacitet;
+	private int kapacitet;
 	
 			//KONSTRUKTOR
 	public TvrdiDisk() {
@@ -29,10 +28,16 @@ public class TvrdiDisk extends Komponenta {
 	public String getTip () {
 		return tip;
 	}
-	public void setKapacitet(BigDecimal kapacitet) {
+	public void setKapacitet(int kapacitet) {
 		this.kapacitet = kapacitet;
 	}
-	public BigDecimal getKapacitet() {
-		return kapacitet;
+	public int getKapacitet() {
+		return Memorijska.pretvoriUTB(kapacitet);
 	}
+	/*
+	@Override
+	public void uvecajKapacitet(int zadaniFaktor) {
+		zadaniFaktor = getKapacitet() * 2;
+	}
+	*/
 }

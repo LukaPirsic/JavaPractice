@@ -1,5 +1,6 @@
 package hr.java.vjezbe.entitet;
 
+
 public class RadnaMemorija extends Komponenta implements Memorijska {
 
 	private String tip;
@@ -32,14 +33,14 @@ public class RadnaMemorija extends Komponenta implements Memorijska {
 		
 	}
 	public int getKapacitet() {
-		return kapacitet;
+		return Memorijska.pretvoriUTB(kapacitet);
 	}
 
 	@Override
-	public void uvecajKapacitet(int kapacitet) {
-		// TODO Auto-generated method stub
-		
+	public void uvecajKapacitet(int zadaniFaktor) {
+		zadaniFaktor = getKapacitet() * 2;
 	}
+	
 }
 
 
