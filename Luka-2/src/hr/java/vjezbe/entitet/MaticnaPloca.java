@@ -43,4 +43,8 @@ public class MaticnaPloca extends Komponenta {
 
 		return maticnaPloca;
 	}
+	
+	public String toString() {
+		return "Naziv proizvodaca maticne ploce: " + nazivProizvodaca + "\n" + "Tip maticne ploce: " + tip;
+	}
 }

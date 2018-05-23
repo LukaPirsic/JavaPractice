@@ -8,7 +8,7 @@ public class Procesor extends Komponenta implements Ferkvencija {
 	public static final String SOCKET_AM2 = "Socket AM2";
 	public static final String SOCKET_AM3 = "Socket AM3";
 	public static final String LGA_1151 = "LGA 1151";
-	public static final String SOCKET_G3 = "G3";
+	public static final String SOCKET_G3 = "Socket G3";
 
 	private String tip, tipSucelja;
 	private BigDecimal brzina;

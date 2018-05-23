@@ -41,17 +41,22 @@ public class Racunalo {
 	public static Racunalo fromUserInput(Scanner scanner) {
 		
 		Racunalo racunalo = new Racunalo ();
+		MaticnaPloca maticnaPloca = new MaticnaPloca();
+		Procesor procesor = new Procesor();
+		RadnaMemorija radnaMemorija = new RadnaMemorija();
+		TvrdiDisk tvrdiDisk = new TvrdiDisk();
 				
-		racunalo.maticnaPloca.fromUserInput(scanner);
+		racunalo.setMaticnaPloca(maticnaPloca.fromUserInput(scanner));
 		/*
-		racunalo.getProcesor();
-		Procesor.fromUserInput(scanner);
-		racunalo.getRadnaMemorija();
-		RadnaMemorija.fromUserInput(scanner);
-		racunalo.getTvrdiDisk();
-		TvrdiDisk.fromUserInput(scanner);
-		*/
+		racunalo.setProcesor(procesor.fromUserInput(scanner));
+		racunalo.setRadnaMemorija(radnaMemorija.fromUserInput(scanner));
+		racunalo.setTvrdiDisk(tvrdiDisk.fromUserInput(scanner));
+		 */
 		return racunalo;
+	}
+	
+	public String toString() {
+		return maticnaPloca.toString();
 	}
 	
 }

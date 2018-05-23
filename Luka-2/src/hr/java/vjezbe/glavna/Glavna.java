@@ -17,23 +17,15 @@ public class Glavna {
 			racunala[i] = new Racunalo();
 
 			System.out.println(String.format("Unesi podatke %d. racunala:", i + 1));
-
-			//ovo upise kak spada
-			//racunala[i].getMaticnaPloca().setNazivProizvodaca(scanner.nextLine());
-			//ovo ne upiše kak se spada nego mi vraca "null"
-			racunala[i].fromUserInput(scanner);
-			/*racunalo.getProcesor().fromUserInput(scanner);
-			racunalo.getRadnaMemorija().fromUserInput(scanner);
-			racunalo.getTvrdiDisk().fromUserInput(scanner);
 			
+			racunala[i] = Racunalo.fromUserInput(scanner);
 			
-			/*
-			racunala[i].fromUserInput(scanner);
-			*/
 		}
 
 		for (int i = 0; i < racunala.length; i++) {
 			
+			System.out.println(racunalo);
+			/*
 			System.out.println("Proizvodac maticne ploce: " + racunala[i].getMaticnaPloca().getNazivProizvodaca());
 			System.out.println("Tip maticne ploce: " + racunala[i].getMaticnaPloca().getTip());
 			/*
