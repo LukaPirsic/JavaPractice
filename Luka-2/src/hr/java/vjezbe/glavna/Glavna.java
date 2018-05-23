@@ -19,10 +19,9 @@ public class Glavna {
 			System.out.println(String.format("Unesi podatke %d. racunala:", i + 1));
 
 			//ovo upise kak spada
-			racunala[i].getMaticnaPloca().setNazivProizvodaca(scanner.nextLine());
+			//racunala[i].getMaticnaPloca().setNazivProizvodaca(scanner.nextLine());
 			//ovo ne upiše kak se spada nego mi vraca "null"
 			racunala[i].fromUserInput(scanner);
-			
 			/*racunalo.getProcesor().fromUserInput(scanner);
 			racunalo.getRadnaMemorija().fromUserInput(scanner);
 			racunalo.getTvrdiDisk().fromUserInput(scanner);

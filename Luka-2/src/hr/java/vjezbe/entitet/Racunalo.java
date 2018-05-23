@@ -8,7 +8,7 @@ public class Racunalo {
 	Procesor procesor = new Procesor();
 	RadnaMemorija radnaMemorija = new RadnaMemorija();
 	TvrdiDisk tvrdiDisk = new TvrdiDisk();
-		
+			
 	public Racunalo() {		
 	}
 	
@@ -36,29 +36,22 @@ public class Racunalo {
 	public TvrdiDisk getTvrdiDisk() {
 		return tvrdiDisk;
 	}
-/*	
+
 			//METODA ZA UNOS KONFIGURACIJE
 	public static Racunalo fromUserInput(Scanner scanner) {
 		
 		Racunalo racunalo = new Racunalo ();
-		
-		racunalo.getMaticnaPloca().fromUserInput(scanner);
-		racunalo.getProcesor().fromUserInput(scanner);
-		racunalo.getRadnaMemorija().fromUserInput(scanner);
-		racunalo.getTvrdiDisk().fromUserInput(scanner);
 				
+		racunalo.maticnaPloca.fromUserInput(scanner);
+		/*
+		racunalo.getProcesor();
+		Procesor.fromUserInput(scanner);
+		racunalo.getRadnaMemorija();
+		RadnaMemorija.fromUserInput(scanner);
+		racunalo.getTvrdiDisk();
+		TvrdiDisk.fromUserInput(scanner);
+		*/
 		return racunalo;
 	}
-*/	
 	
-	public static Racunalo fromUserInput(Scanner scanner) {
-		Racunalo racunalo = new Racunalo();
-		
-		racunalo.getMaticnaPloca().fromUserInput(scanner);
-		racunalo.getProcesor().fromUserInput(scanner);
-		racunalo.getRadnaMemorija().fromUserInput(scanner);
-		racunalo.getTvrdiDisk().fromUserInput(scanner);
-
-		return racunalo;
-	}
 }
