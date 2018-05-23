@@ -1,5 +1,7 @@
 package hr.java.vjezbe.entitet;
 
+import java.util.Scanner;
+
 public class MaticnaPloca extends Komponenta {
 	
 	private String tip;
@@ -25,6 +27,18 @@ public class MaticnaPloca extends Komponenta {
 	}
 	public String getTip() {
 		return tip;
+	}
+	
+			//METODA ZA UNOS KONFIGURACIJE
+	public static MaticnaPloca fromUserInput (Scanner scanner) {
+		MaticnaPloca maticnaPloca = new MaticnaPloca();
+		
+		System.out.print("Unesi proizvodaca maticne ploce: ");
+		maticnaPloca.setNazivProizvodaca(scanner.nextLine());
+		System.out.print("Unesi tip maticne ploce: ");
+		maticnaPloca.setTip(scanner.nextLine());
+		
+		return maticnaPloca;
 	}
 	
 }

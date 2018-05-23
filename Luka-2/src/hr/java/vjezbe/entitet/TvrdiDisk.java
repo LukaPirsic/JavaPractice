@@ -1,5 +1,6 @@
 package hr.java.vjezbe.entitet;
 
+import java.util.Scanner;
 
 public class TvrdiDisk extends Komponenta  {
 
@@ -34,6 +35,24 @@ public class TvrdiDisk extends Komponenta  {
 	public int getKapacitet() {
 		return Memorijska.pretvoriUTB(kapacitet);
 	}
+	
+			//METODA ZA UNOS KONFIGURACIJE
+	public static TvrdiDisk fromUserInput(Scanner scanner) {
+		
+		TvrdiDisk tvrdiDisk = new TvrdiDisk();
+		
+		System.out.print("Unesi proizvodaca tvrdog diska: ");
+		tvrdiDisk.setNazivProizvodaca(scanner.nextLine());
+		System.out.print("Unesi tip tvrdog diska: ");
+		tvrdiDisk.setTip(scanner.nextLine());
+		System.out.print("Unesi kapacitet tvrdog diska (u TB): ");
+		tvrdiDisk.setKapacitet(scanner.nextInt());
+		scanner.nextLine();
+
+		return tvrdiDisk;
+	}
+	
+	
 	/*
 	@Override
 	public void uvecajKapacitet(int zadaniFaktor) {

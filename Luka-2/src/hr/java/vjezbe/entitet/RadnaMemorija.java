@@ -1,5 +1,6 @@
 package hr.java.vjezbe.entitet;
 
+import java.util.Scanner;
 
 public class RadnaMemorija extends Komponenta implements Memorijska {
 
@@ -34,6 +35,22 @@ public class RadnaMemorija extends Komponenta implements Memorijska {
 	}
 	public int getKapacitet() {
 		return Memorijska.pretvoriUTB(kapacitet);
+	}
+	
+			//METODA ZA UNOS KONFIGURACIJE
+	public static RadnaMemorija fromUserInput(Scanner scanner) {
+		
+		RadnaMemorija radnaMemorija = new RadnaMemorija();
+		
+		System.out.print("Unesi proizvodaca radne memorija: ");
+		radnaMemorija.setNazivProizvodaca(scanner.nextLine());
+		System.out.print("Unesi tip rande memorije: ");
+		radnaMemorija.setTip(scanner.nextLine());
+		System.out.print("Unesi kapacitet radne memorije: ");
+		radnaMemorija.setKapacitet(scanner.nextInt());
+		scanner.nextLine();
+		
+		return radnaMemorija;
 	}
 
 	@Override

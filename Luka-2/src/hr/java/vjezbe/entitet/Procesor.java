@@ -1,49 +1,103 @@
 package hr.java.vjezbe.entitet;
 
 import java.math.BigDecimal;
+import java.util.Scanner;
 
-public class Procesor extends Komponenta implements Ferkvencija{
+public class Procesor extends Komponenta implements Ferkvencija {
 
 	public static final String SOCKET_AM2 = "Socket AM2";
 	public static final String SOCKET_AM3 = "Socket AM3";
 	public static final String LGA_1151 = "LGA 1151";
 	public static final String SOCKET_G3 = "G3";
-	
+
 	private String tip, tipSucelja;
 	private BigDecimal brzina;
-	
-			//KONSTRUKTOR
+
+	// KONSTRUKTOR
 	public Procesor() {
 	}
-	
-			//NEKAJ DA MOGU PRISTUPITI NAZ.PROIZ. IZ KOMPONENTE
+
+	// NEKAJ DA MOGU PRISTUPITI NAZ.PROIZ. IZ KOMPONENTE
 	public Procesor(String nazivProizvodaca) {
 		super();
 	}
-	
-			//GET I SET METODE
+
+	// GET I SET METODE
 	public void setNazivProizvodaca(String nazivProizvodaca) {
 		this.nazivProizvodaca = nazivProizvodaca;
 	}
+
 	public String getNazivProizvodaca() {
 		return nazivProizvodaca;
 	}
+
 	public void setTip(String tip) {
 		this.tip = tip;
 	}
+
 	public String getTip() {
 		return tip;
 	}
-	public void setTipSucelja (String tipSucelja) {
+
+	public void setTipSucelja(String tipSucelja) {
 		this.tipSucelja = tipSucelja;
 	}
+
 	public String getTipSucelja() {
 		return tipSucelja;
 	}
-	public void setBrzina (BigDecimal brzina) {
+
+	public void setBrzina(BigDecimal brzina) {
 		this.brzina = overclock(brzina);
 	}
-	public BigDecimal getBrzina () {
+
+	public BigDecimal getBrzina() {
 		return brzina;
+	}
+
+	// METODA ZA UNOS KONFIGURACIJE
+	public static Procesor fromUserInput(Scanner scanner) {
+		Procesor procesor = new Procesor();
+
+		System.out.print("Unesi proizvodaca procesora: ");
+		procesor.setNazivProizvodaca(scanner.nextLine());
+		System.out.print("Unesi tip procesora: ");
+		procesor.setTip(scanner.nextLine());
+
+		// PETLJA KOJA VRACA NA POCEKAT AKO NIJE BROJ ODABRAN IZMEDU 1 - 4
+		int temp = 6;
+		while (temp < 1 || temp > 4) {
+			System.out.println("Unesi tip sucelja procesora (odaberite broj ispred zeljenog sucelja): ");
+			System.out.println("1) " + SOCKET_AM2);
+			System.out.println("2) " + SOCKET_AM3);
+			System.out.println("3) " + LGA_1151);
+			System.out.println("4) " + SOCKET_G3);
+			temp = scanner.nextInt();
+
+			if (temp > 0 && temp < 5) {
+
+				switch (temp) {
+				case 1:
+					procesor.setTipSucelja(SOCKET_AM2);
+					break;
+				case 2:
+					procesor.setTipSucelja(SOCKET_AM3);
+					break;
+				case 3:
+					procesor.setTipSucelja(LGA_1151);
+					break;
+				case 4:
+					procesor.setTipSucelja(SOCKET_G3);
+					break;
+				}
+			} else {
+				System.out.println("Pogreska kod odabira, molim pokusajte ponovno!");
+			}
+		}
+		System.out.print("Unesi brzinu procesora: ");
+		procesor.setBrzina(scanner.nextBigDecimal());
+		scanner.nextLine();
+
+		return procesor;
 	}
 }
