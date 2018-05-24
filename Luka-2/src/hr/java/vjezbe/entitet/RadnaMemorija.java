@@ -34,7 +34,7 @@ public class RadnaMemorija extends Komponenta implements Memorijska {
 		
 	}
 	public int getKapacitet() {
-		return Memorijska.pretvoriUTB(kapacitet);
+		return kapacitet;
 	}
 	
 			//METODA ZA UNOS KONFIGURACIJE
@@ -52,10 +52,14 @@ public class RadnaMemorija extends Komponenta implements Memorijska {
 		
 		return radnaMemorija;
 	}
+	
+			//METODA ZA ISPIS KONFIGURACIJE
+	public String toString() {
+		return "Naziv proizvodaca radne memorije: " + nazivProizvodaca + "\n" + "Tip radne memorije: " + tip + "\n" + "Kapacitet radne memorije: " + kapacitet;
+	}
 
-	@Override
-	public void uvecajKapacitet(int zadaniFaktor) {
-		zadaniFaktor = getKapacitet() * 2;
+	public void uvecajKapacitet(int kapacitet) {
+		this.kapacitet = kapacitet * 2;
 	}
 	
 }

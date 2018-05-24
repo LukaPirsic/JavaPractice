@@ -2,44 +2,60 @@ package hr.java.vjezbe.glavna;
 
 import java.util.Scanner;
 
+import hr.java.vjezbe.entitet.Ferkvencija;
+import hr.java.vjezbe.entitet.Memorijska;
 import hr.java.vjezbe.entitet.Racunalo;
+import hr.java.vjezbe.entitet.RadnaMemorija;
 
 public class Glavna {
 
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
-		Racunalo racunalo = new Racunalo();
+		//Racunalo racunalo = new Racunalo();
+		RadnaMemorija radnaMemorija = new RadnaMemorija();
 		Racunalo racunala[] = new Racunalo[2];
-
+				
+				//UNOS KONFIGURACIJE
 		for (int i = 0; i < racunala.length; i++) {
 
 			racunala[i] = new Racunalo();
-
+				
 			System.out.println(String.format("Unesi podatke %d. racunala:", i + 1));
-			
 			racunala[i] = Racunalo.fromUserInput(scanner);
-			
+
+		}
+			//ISPIS KONFIGURACIJE
+		for (int i = 0; i < racunala.length; i++) {
+
+			System.out.println(String.format("%d. racunalo", i + 1));
+			System.out.println("------------");
+			System.out.println(racunala[i].toString());
 		}
 
-		for (int i = 0; i < racunala.length; i++) {
+		// TRAŽENJE KOJE RACUNALO IMA MANJE RADNE MEMORIJE
+		if (racunala[0].getRadnaMemorija().getKapacitet() < racunala[1].getRadnaMemorija().getKapacitet()) {
 			
-			System.out.println(racunalo);
-			/*
-			System.out.println("Proizvodac maticne ploce: " + racunala[i].getMaticnaPloca().getNazivProizvodaca());
-			System.out.println("Tip maticne ploce: " + racunala[i].getMaticnaPloca().getTip());
-			/*
-			System.out.println("Proizvodac procesora: " + racunala[i].getProcesor().getNazivProizvodaca());
-			System.out.println("Tip procesora: " + racunala[i].getProcesor().getTip());
-			System.out.println("Tip sucelja procesora: " + racunala[i].getProcesor().getTipSucelja());
-			System.out.println("Brzina procesora: " + racunala[i].getProcesor().getBrzina());
-			System.out.println("Proizvodac radne memorije: " + racunala[i].getRadnaMemorija().getNazivProizvodaca());
-			System.out.println("Tip radne memorije: " + racunala[i].getRadnaMemorija().getTip());
-			System.out.println("Kapacitet radne memorije: " + racunala[i].getRadnaMemorija().getKapacitet());
-			System.out.println("Proizvodac tvrdog diska: " + racunala[i].getTvrdiDisk().getNazivProizvodaca());
-			System.out.println("Tip tvrdog diska: " + racunala[i].getTvrdiDisk().getTip());
-			System.out.println("Kapacitet tvrdog diska: " + racunala[i].getTvrdiDisk().getKapacitet());
-			*/
+			// OVO MI NE RADI ONO KAJ BI TREBALO 
+			radnaMemorija.uvecajKapacitet(racunala[0].getRadnaMemorija().getKapacitet());
+			{
+				System.out.println(racunala[0].getRadnaMemorija().getKapacitet());
+			}
+		} else if (racunala[0].getRadnaMemorija().getKapacitet() > racunala[1].getRadnaMemorija().getKapacitet()) {
+			radnaMemorija.uvecajKapacitet(racunala[1].getRadnaMemorija().getKapacitet());
+			{
+				System.out.println(racunala[0].getRadnaMemorija().getKapacitet());
+			}
 		}
+		/*
+		 * //TRAZENJE KOJE RACUNALO IMA BRZI PROCESOR
+		 * if(racunala[0].getProcesor().getBrzina().compareTo(racunala[1].getProcesor().
+		 * getBrzina())>0){
+		 * 
+		 * 
+		 * System.out.print("a"); }else { System.out.print("b"); }
+		 */
+
 	}
+
 }

@@ -48,7 +48,7 @@ public class Procesor extends Komponenta implements Ferkvencija {
 	}
 
 	public void setBrzina(BigDecimal brzina) {
-		this.brzina = overclock(brzina);
+		this.brzina = brzina;
 	}
 
 	public BigDecimal getBrzina() {
@@ -99,5 +99,10 @@ public class Procesor extends Komponenta implements Ferkvencija {
 		scanner.nextLine();
 
 		return procesor;
+	}
+		
+			//METODA ZA ISPIS KONFIGURACIJE
+	public String toString() {
+		return "Naziv proizvodaca procesora: " + nazivProizvodaca + "\n" + "Tip procesora: " + tip + "\n" + "Tip sucelja procesora: " + tipSucelja + "\n"  + "Brzina procesora: " + brzina;
 	}
 }
