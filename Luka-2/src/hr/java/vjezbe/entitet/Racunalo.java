@@ -46,17 +46,17 @@ public class Racunalo {
 		RadnaMemorija radnaMemorija = new RadnaMemorija();
 		TvrdiDisk tvrdiDisk = new TvrdiDisk();
 				
-		//racunalo.setMaticnaPloca(maticnaPloca.fromUserInput(scanner));
-		//racunalo.setProcesor(procesor.fromUserInput(scanner));
+		racunalo.setMaticnaPloca(maticnaPloca.fromUserInput(scanner));
+		racunalo.setProcesor(procesor.fromUserInput(scanner));
 		racunalo.setRadnaMemorija(radnaMemorija.fromUserInput(scanner));
-		//racunalo.setTvrdiDisk(tvrdiDisk.fromUserInput(scanner));
+		racunalo.setTvrdiDisk(tvrdiDisk.fromUserInput(scanner));
 		
 		return racunalo;
 	}
 	
 			//METODA ZA ISPIS KONFIGURACIJE
 	public String toString() {
-		return /*maticnaPloca.toString() + "\n" + procesor.toString() + "\n" +*/ radnaMemorija.toString() /*+ "\n" + tvrdiDisk.toString()*/;
+		return maticnaPloca.toString() + "\n" + procesor.toString() + "\n" +  radnaMemorija.toString() + "\n" + tvrdiDisk.toString();
 	}
 	
 }

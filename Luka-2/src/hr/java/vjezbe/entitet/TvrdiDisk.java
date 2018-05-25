@@ -3,10 +3,10 @@ package hr.java.vjezbe.entitet;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-public class TvrdiDisk extends Komponenta {
+public class TvrdiDisk extends Komponenta implements Memorijska{
 
 	private String tip;
-	private int kapacitet;
+	private BigDecimal kapacitet;
 
 	// KONSTRUKTOR
 	public TvrdiDisk() {
@@ -34,12 +34,12 @@ public class TvrdiDisk extends Komponenta {
 		return tip;
 	}
 
-	public void setKapacitet(int kapacitet) {
+	public void setKapacitet(BigDecimal kapacitet) {
 		this.kapacitet = kapacitet;
 	}
 
-	public int getKapacitet() {
-		return Memorijska.pretvoriUTB(kapacitet);
+	public BigDecimal getKapacitet() {
+		return kapacitet;
 	}
 
 	// METODA ZA UNOS KONFIGURACIJE
@@ -52,20 +52,16 @@ public class TvrdiDisk extends Komponenta {
 		System.out.print("Unesi tip tvrdog diska: ");
 		tvrdiDisk.setTip(scanner.nextLine());
 		System.out.print("Unesi kapacitet tvrdog diska (u TB): ");
-		tvrdiDisk.setKapacitet(scanner.nextInt());
+		tvrdiDisk.setKapacitet(scanner.nextBigDecimal());
 		scanner.nextLine();
 
 		return tvrdiDisk;
 	}
-
+	
 	// METODA ZA ISPIS KONFIGURACIJE
 	public String toString() {
 		return "Naziv proizvodaca tvrdog diska: " + nazivProizvodaca + "\n" + "Tip tvrdog diska: " + tip + "\n"
-				+ "Kapacitet tvrdog diska: " + kapacitet;
+				+ "Kapacitet tvrdog diska: " + kapacitet + " TB";
 	}
-
-	/*
-	 * @Override public void uvecajKapacitet(int zadaniFaktor) { zadaniFaktor =
-	 * getKapacitet() * 2; }
-	 */
+		
 }

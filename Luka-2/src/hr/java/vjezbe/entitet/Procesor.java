@@ -103,6 +103,6 @@ public class Procesor extends Komponenta implements Ferkvencija {
 		
 			//METODA ZA ISPIS KONFIGURACIJE
 	public String toString() {
-		return "Naziv proizvodaca procesora: " + nazivProizvodaca + "\n" + "Tip procesora: " + tip + "\n" + "Tip sucelja procesora: " + tipSucelja + "\n"  + "Brzina procesora: " + brzina;
+		return "Naziv proizvodaca procesora: " + nazivProizvodaca + "\n" + "Tip procesora: " + tip + "\n" + "Tip sucelja procesora: " + tipSucelja + "\n"  + "Brzina procesora: " + brzina + " GHz";
 	}
 }

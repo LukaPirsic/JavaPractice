@@ -1,11 +1,12 @@
 package hr.java.vjezbe.entitet;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class RadnaMemorija extends Komponenta implements Memorijska {
 
 	private String tip;
-	private int kapacitet;
+	private BigDecimal kapacitet;
 	
 			//KONSTRUKTOR
 	public RadnaMemorija() {
@@ -29,11 +30,11 @@ public class RadnaMemorija extends Komponenta implements Memorijska {
 	public String getTip() {
 		return tip;
 	}
-	public void setKapacitet(int kapacitet) {
+	public void setKapacitet(BigDecimal kapacitet) {
 		this.kapacitet = kapacitet;
 		
 	}
-	public int getKapacitet() {
+	public BigDecimal getKapacitet() {
 		return kapacitet;
 	}
 	
@@ -44,10 +45,10 @@ public class RadnaMemorija extends Komponenta implements Memorijska {
 		
 		System.out.print("Unesi proizvodaca radne memorija: ");
 		radnaMemorija.setNazivProizvodaca(scanner.nextLine());
-		System.out.print("Unesi tip rande memorije: ");
+		System.out.print("Unesi tip radne memorije: ");
 		radnaMemorija.setTip(scanner.nextLine());
-		System.out.print("Unesi kapacitet radne memorije: ");
-		radnaMemorija.setKapacitet(scanner.nextInt());
+		System.out.print("Unesi kapacitet radne memorije (u GB): ");
+		radnaMemorija.setKapacitet(scanner.nextBigDecimal());
 		scanner.nextLine();
 		
 		return radnaMemorija;
@@ -55,11 +56,12 @@ public class RadnaMemorija extends Komponenta implements Memorijska {
 	
 			//METODA ZA ISPIS KONFIGURACIJE
 	public String toString() {
-		return "Naziv proizvodaca radne memorije: " + nazivProizvodaca + "\n" + "Tip radne memorije: " + tip + "\n" + "Kapacitet radne memorije: " + kapacitet;
+		return "Naziv proizvodaca radne memorije: " + nazivProizvodaca + "\n" + "Tip radne memorije: " + tip + "\n" + "Kapacitet radne memorije: " + Memorijska.pretvoriUTB(kapacitet) + " GB";
 	}
-
-	public void uvecajKapacitet(int kapacitet) {
-		this.kapacitet = kapacitet * 2;
+	
+	public void uvecajKapacitet(BigDecimal kapacitet) {
+		BigDecimal x = new BigDecimal(2);
+		this.kapacitet = kapacitet.multiply(x);
 	}
 	
 }
