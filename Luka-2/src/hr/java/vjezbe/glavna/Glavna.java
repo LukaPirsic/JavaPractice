@@ -9,6 +9,7 @@ public class Glavna {
 
 	public static void main(String[] args) {
 
+	
 		Scanner scanner = new Scanner(System.in);
 		Racunalo racunala[] = new Racunalo[2];
 
