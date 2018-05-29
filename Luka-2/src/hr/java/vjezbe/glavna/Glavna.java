@@ -61,6 +61,8 @@ public class Glavna {
 		}
 
 		System.out.println("gotovo");
+
+		System.out.println("gotovo");
 	}
 
 }
